@@ -1,0 +1,26 @@
+<div class="product-item">
+  <a [routerLink]="['/app/catalogue/product', product.id]" class="product-img">
+    <img src="{{product.photos[0]}}" alt="{{product.name}}">
+    <div class="product-absolute-options">
+      <span class="offer-badge-1" *ngIf="product.discountResource != null">{{product.discountResource.percentage}}% off</span>
+      <span class="like-icon" title="wishlist"></span>
+    </div>
+  </a>
+  <div class="product-text-dt">
+    <p>Available<span>(In Stock)</span></p>
+    <h4>{{product.name}}</h4>
+    <div class="product-price" *ngIf="product.discountResource==null">${{product.price}}</div>
+    <div class="product-price" *ngIf="product.discountResource!=null">
+      ${{product.price - (product.price*product.discountResource.percentage/100) | number: '.2-2'}}
+      <span>${{product.price}}</span>
+    </div>
+    <div class="qty-cart">
+      <div class="quantity buttons_added">
+        <input type="button" value="-" class="minus minus-btn">
+        <input type="number" step="1" name="quantity" value="1" class="input-text qty text">
+        <input type="button" value="+" class="plus plus-btn">
+      </div>
+      <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
+    </div>
+  </div>
+</div>

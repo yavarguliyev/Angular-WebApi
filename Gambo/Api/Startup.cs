@@ -41,7 +41,7 @@ namespace Api
                 options.AddPolicy(name: ApiCors,
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:4200/")
+                        builder.WithOrigins("http://localhost:4200")
                                             .AllowAnyHeader()
                                             .AllowAnyMethod()
                                             .AllowCredentials();
