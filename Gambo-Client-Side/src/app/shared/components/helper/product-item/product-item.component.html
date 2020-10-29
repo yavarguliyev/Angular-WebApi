@@ -2,7 +2,8 @@
   <a [routerLink]="['/app/catalogue/product', product.id]" class="product-img">
     <img src="{{product.photos[0]}}" alt="{{product.name}}">
     <div class="product-absolute-options">
-      <span class="offer-badge-1" *ngIf="product.discountResource != null">{{product.discountResource.percentage}}% off</span>
+      <span class="offer-badge-1" *ngIf="product.discountResource != null">{{product.discountResource.percentage}}%
+        off</span>
       <span class="like-icon" title="wishlist"></span>
     </div>
   </a>
@@ -20,7 +21,7 @@
         <input type="number" step="1" name="quantity" value="1" class="input-text qty text">
         <input type="button" value="+" class="plus plus-btn">
       </div>
-      <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
+      <span class="cart-icon" (click)="addToBasket()"><i class="uil uil-shopping-cart-alt"></i></span>
     </div>
   </div>
 </div>
